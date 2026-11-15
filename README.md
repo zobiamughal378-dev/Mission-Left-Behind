@@ -4,9 +4,8 @@
 
 An interactive website where five machines NASA left behind tell their own stories: the Apollo Moon Buggy, Spirit, Opportunity, Ingenuity and Voyager 1. Funny, true, and a little bit emotional.
 
-- **Live site:** [PASTE YOUR PUBLIC LINK HERE]
-- **Demo:** [PASTE YOUR DEMO LINK HERE]
-- **Author:** [YOUR NAME] (solo project, project name on Space Apps: Astro Innovate Orbit)
+- **Live site:** https://mission-left-behind-henna.vercel.app/
+- **Author:** Zobia Razzaq (solo project, project name on Space Apps: Astro Innovate Orbit)
 
 ## What it does
 
