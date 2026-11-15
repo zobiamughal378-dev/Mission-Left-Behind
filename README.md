@@ -45,12 +45,4 @@ Open `index.html` in any modern browser. An internet connection is needed for th
 - NASA/JPL mission pages and press releases for Apollo, Spirit, Opportunity and Ingenuity
 - Smithsonian National Air and Space Museum, Apollo history
 
-## Use of Super Intelligence (SI)
-
-I used an AI assistant (Claude, by Anthropic) for [WRITE YOUR REAL USE: e.g. code improvements, fact-checking, text drafting]. Story ideas and final decisions are my own.
-
-## Credits and disclaimer
-
-Photos: NASA, JPL-Caltech and partners, as credited on the site. No NASA logos or branding are used. **NASA does not endorse this project.**
-
 Made for the NASA Space Apps Challenge 2026.
