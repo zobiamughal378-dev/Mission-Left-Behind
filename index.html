@@ -64,18 +64,6 @@ footer{position:relative;z-index:1;background:#02030a;border-top:1px solid #ffff
 @media(max-width:700px){.brand span{display:none}#nav nav a{padding:6px 9px;font-size:.82rem}}
 @media(max-width:700px){.s{align-items:flex-end;padding-bottom:3vh}.card{padding:16px}.ph{max-height:150px}h2{font-size:1.5rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}footer a{color:var(--cy)}#vc{font-weight:800;color:var(--gold)}
-
-.card{background:#060a1ff2}
-@media(min-width:1000px){#apollo,#spirit,#opp,#ing,#voyager{justify-content:flex-start}}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
-.br{margin:16px 0}.br b{display:flex;justify-content:space-between;font-size:.95rem}.br b span{color:var(--gold)}
-.tr{background:#ffffff14;border-radius:8px;height:14px;margin:5px 0;overflow:hidden}.tr i{display:block;height:100%;width:0;border-radius:8px;transition:width 1.5s cubic-bezier(.2,.8,.2,1)}
-.pl{background:var(--red)}.ac{background:var(--cy)}
-#bars.in .pl{width:var(--w)}#bars.in .ac{width:100%}
-#ctl{position:fixed;right:14px;bottom:14px;z-index:20;display:flex;gap:8px}
-#ctl button{background:var(--gold);color:#1a1200;border:0;border-radius:30px;padding:10px 16px;font:800 .9rem system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 20px #000a}
-#sub{position:fixed;left:50%;bottom:68px;transform:translateX(-50%);max-width:min(760px,92vw);background:#000d;color:#fff;padding:10px 18px;border-radius:12px;font-size:1.1rem;text-align:center;z-index:20;display:none}
 </style></head><body>
 <div id="bar"></div><header id="nav"><a class="brand" href="#top"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="5" fill="#ffb84d"/><ellipse cx="14" cy="14" rx="12" ry="5" fill="none" stroke="#5ee1ff" stroke-width="1.6" transform="rotate(-25 14 14)"/></svg><span>Astro Innovate Orbit</span></a><nav><a href="#story">Story</a><a href="#article">Article</a><a href="#apollo">Machines</a><a href="#game">Quiz</a><a href="#about">About</a></nav></header><canvas id="c" aria-hidden="true"></canvas>
 
@@ -143,8 +131,6 @@ footer{position:relative;z-index:1;background:#02030a;border-top:1px solid #ffff
 <ul class="facts"><li><strong>Real:</strong> launched 5 September 1977, left the heliosphere in 2012.</li><li>One light-day (about 25.9 billion km) on 18 November 2026. Voyager 2 follows in 2035.</li><li>Golden Record: greetings in 55 languages.</li></ul>
 <p class="q">Think: if you send a message on Monday, when is the earliest a reply can arrive?</p>
 <p class="note">Fictional dramatization, real mission facts.</p></div></section>
-<section class="s" id="numbers" style="justify-content:center"><div class="card" style="max-width:820px;width:100%;--c:#ffc857"><span class="tag">PLANNED VS REALITY</span><h2>They were supposed to quit early</h2>
-<p class="note" style="margin:0 0 6px">Red = what NASA planned. Blue = what the machine did (always 100%).</p><div id="bars"></div><p class="note">Ratios from NASA mission records: Spirit about 20x its 90 Mars days, Opportunity 5,111 vs 90 Mars days and 45.16 km vs 1 km, Ingenuity 72 vs 5 flights.</p></div></section>
 <section class="s" id="story" style="justify-content:center"><div id="st"><div id="hud"><span>💧 Water left: <b id="wd">11</b> days</span><span>Base Meridian · Mars · 2064</span></div>
 <div id="stage"><img id="sim" alt="NASA photo for this scene"><div id="fx"></div><div id="av">🪐</div></div>
 <div id="dlg"><b id="who">Press start</b><p id="tx">Scroll here and the story begins. You make the choices.</p><div id="ch"></div><div id="act" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><button class="btn" id="nx" style="display:none">Continue ▶</button></div></div></div></section>
@@ -298,26 +284,4 @@ qa.innerHTML='<p><b>Q'+(qi+1)+'.</b> '+q[0]+'</p>';
 o.forEach(([t,k])=>{const b=document.createElement('button');b.textContent=t;b.dataset.k=k;b.onclick=()=>{[...qa.querySelectorAll('button')].forEach(x=>x.disabled=true);
 if(k===q[2]){sc++;b.className='ok'}else{b.className='no';[...qa.querySelectorAll('button')].forEach(x=>{if(+x.dataset.k===q[2])x.className='ok'})}setTimeout(()=>{qi++;show()},1600)};qa.appendChild(b)})}
 show();
-</script><footer id="about"><h3>About this project</h3><p>Astro Innovate Orbit is our entry for the NASA challenge "Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars". The machines tell their own stories so school students can meet the hardware and the science it made possible.</p><p>The 2064 crew, Zain, Nani and Hina Khan are fiction. Mission facts come from NASA mission pages (<a href="https://science.nasa.gov/mission/voyager/" target="_blank" rel="noopener">NASA Science: Voyager</a>, <a href="https://www.nasa.gov" target="_blank" rel="noopener">nasa.gov</a>). Photos: NASA, JPL-Caltech and partners, as credited. NASA does not endorse this project.</p><p>Voice narration and subtitles use your browser's built-in text-to-speech. Parts of the code and text were created with the help of an AI assistant (Claude).</p></footer><div id="ctl"><button id="bl" aria-pressed="false">🔊 Listen</button><button id="bt">▶ 30-sec tour</button></div><div id="sub" aria-live="polite"></div>
-<script>
-
-(function(){
-var D=[["Spirit: life span",20,"~20×"],["Opportunity: life span",57,"50×+"],["Opportunity: distance (1 km planned)",45,"45×"],["Ingenuity: flights (5 planned)",14.4,"14×"]];
-document.getElementById('bars').innerHTML=D.map(function(r){return '<div class="br"><b>'+r[0]+'<span>'+r[2]+'</span></b><div class="tr"><i class="pl" style="--w:'+(100/r[1]).toFixed(1)+'%"></i></div><div class="tr"><i class="ac"></i></div></div>'}).join('');
-document.querySelectorAll('.chat').forEach(function(c){Array.prototype.forEach.call(c.children,function(b,i){b.classList.add('rv');b.style.setProperty('--d',(i*.35)+'s')})});
-document.querySelectorAll('.card .facts,.card .q,.card .ph,.card h2,.lesson,.af').forEach(function(e){e.classList.add('rv')});
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;t.classList.add('in');if(t.classList.contains('chat'))Array.prototype.forEach.call(t.children,function(b){b.classList.add('in')});io.unobserve(t)})},{threshold:.2});
-document.querySelectorAll('.chat,.rv:not(.b),#bars').forEach(function(e){io.observe(e)});
-var L={top:"Five NASA machines were left behind. But never forgotten.",apollo:"The Moon Buggy: three rovers, still parked on the Moon.",spirit:"Spirit drove backwards on a broken wheel, and found signs of water.",opp:"Opportunity was planned for one kilometre. It drove forty-five.",ing:"Ingenuity: five flights planned. It flew seventy-two.",voyager:"Voyager 1: a message to it takes twenty-four hours.",story:"Play a Mars story where these machines save a crew.",game:"Take the quiz. Who told you that you can't?"};
-var ORDER=Object.keys(L),sub=document.getElementById('sub'),bl=document.getElementById('bl'),bt=document.getElementById('bt'),listen=false,tour=false,tok=0,tm;
-function say(t,cb,rate){var my=++tok;sub.textContent=t;sub.style.display='block';clearTimeout(tm);
-function fin(){if(my!==tok)return;tm=setTimeout(function(){if(my!==tok)return;if(!tour)sub.style.display='none';cb&&cb()},350)}
-if(window.speechSynthesis&&window.SpeechSynthesisUtterance){speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=rate||1;u.onend=fin;u.onerror=fin;speechSynthesis.speak(u)}else{tm=setTimeout(fin,t.length*60+400)}}
-function stop(){tour=false;tok++;if(window.speechSynthesis)speechSynthesis.cancel();sub.style.display='none';bt.textContent='▶ 30-sec tour'}
-function run(i){if(!tour)return;if(i>=ORDER.length){stop();return}var id=ORDER[i];document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){if(tour)say(L[id],function(){run(i+1)},1.15)},500)}
-bt.onclick=function(){if(tour){stop();return}listen=false;bl.textContent='🔊 Listen';bl.setAttribute('aria-pressed','false');tour=true;bt.textContent='■ Stop tour';window.scrollTo({top:0});setTimeout(function(){run(0)},300)};
-bl.onclick=function(){if(tour)stop();listen=!listen;bl.textContent=listen?'🔇 Mute':'🔊 Listen';bl.setAttribute('aria-pressed',listen);if(!listen){tok++;if(window.speechSynthesis)speechSynthesis.cancel();sub.style.display='none'}};
-var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&listen&&!tour)say(L[e.target.id])})},{threshold:.55});
-ORDER.forEach(function(id){var el=document.getElementById(id);if(el)so.observe(el)});
-})();
-</script></body></html>
+</script><footer id="about"><h3>About this project</h3><p>Astro Innovate Orbit is our entry for the NASA challenge "Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars". The machines tell their own stories so school students can meet the hardware and the science it made possible.</p><p>The 2064 crew, Zain, Nani and Hina Khan are fiction. Mission facts come from NASA mission pages (<a href="https://science.nasa.gov/mission/voyager/" target="_blank" rel="noopener">NASA Science: Voyager</a>, <a href="https://www.nasa.gov" target="_blank" rel="noopener">nasa.gov</a>). Photos: NASA, JPL-Caltech and partners, as credited. NASA does not endorse this project.</p></footer></body></html>
